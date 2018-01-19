@@ -11,17 +11,6 @@ import redis.clients.jedis.JedisPoolConfig;
  */
 public class JedisDemo {
 
-    /*public static void main(String[] args) {
-        //设置IP地址和端口
-        Jedis jedis = new Jedis("39.106.173.68",6379);
-        //存入数据
-        jedis.set("say","hello redis!");
-        //获取数据
-        String s = jedis.get("say");
-        System.out.println(s);
-        //释放资源
-        jedis.close();
-    }*/
     /**
     　　* @Description: 创建单个Jedis对象操作Redis
     　　* @author 十一城城主
