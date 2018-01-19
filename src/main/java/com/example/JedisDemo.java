@@ -23,11 +23,28 @@ public class JedisDemo {
         jedis.close();
     }*/
     /**
-    　　* 使用连接池的方式
+    　　* @Description: 创建单个Jedis对象操作Redis
     　　* @author 十一城城主
-    　　* @date 2018/1/18 17:20
+    　　* @date 2018/1/19 15:56 
     　　*/
-    public static void main(String[] args) {
+    public static void singleJedisTest(){
+        //设置IP地址以及端口
+        Jedis jedis = new Jedis("39.106.173.68", 6379);
+        //存入数据
+        jedis.set("say","hello redis!");
+        //获取数据
+        String say = jedis.get("say");
+        System.out.println(say);
+        //释放资源
+        jedis.close();
+    }
+
+    /**
+    　　* @Description: 使用Jedis连接池操作Redis
+    　　* @author 十一城城主
+    　　* @date 2018/1/19 15:57
+    　　*/
+    public static void jedisPoolTest(){
         //获得连接池的配置对象
         JedisPoolConfig jedisPoolConfig = new JedisPoolConfig();
         //设置最大连接数
@@ -57,6 +74,16 @@ public class JedisDemo {
                 jedisPool.close();
             }
         }
+    }
+
+    /**
+    　　* 主方法
+    　　* @author 十一城城主
+    　　* @date 2018/1/18 17:20
+    　　*/
+    public static void main(String[] args) {
+        singleJedisTest();
+        jedisPoolTest();
     }
 
 
