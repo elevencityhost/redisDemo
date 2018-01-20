@@ -71,7 +71,9 @@ public class JedisDemo {
     　　* @date 2018/1/18 17:20
     　　*/
     public static void main(String[] args) {
+        //调用单个jedis对象
         singleJedisTest();
+        //从Jedis连接池中取Jedis对象
         jedisPoolTest();
     }
 
