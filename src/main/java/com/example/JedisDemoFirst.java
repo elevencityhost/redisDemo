@@ -14,5 +14,6 @@ public class JedisDemoFirst {
 
     public static void main(String[] args) {
         logger.info("测试一下记录日志的注解!!!");
+        logger.warn("未正常使用@Logger提供的功能!!!");
     }
 }
