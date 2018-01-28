@@ -1,2 +1,3 @@
 # redisDemo
 使用jedis操作redis的demo
+包括单个jedis对象操作Redis
