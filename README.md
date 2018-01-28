@@ -1,3 +1,3 @@
 # redisDemo
 使用jedis操作redis的demo
-包括单个jedis对象操作Redis
+包括单个jedis对象操作Redis以及使用jedis连接池取出jedis对象操作Redis数据库
