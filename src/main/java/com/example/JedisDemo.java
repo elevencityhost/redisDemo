@@ -4,6 +4,8 @@ import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
 
+import java.util.List;
+
 /**
  * function 测试jedis连接redis并执行部分操作
  * @author 十一城城主
@@ -74,10 +76,14 @@ public class JedisDemo {
         //设置IP地址以及端口
         Jedis jedis = new Jedis("39.106.173.68", 6379);
         //存入数据
-        jedis.set("say","hello redis!");
-        //获取数据
-        String say = jedis.get("say");
-        System.out.println(say);
+        Teacher teacher = new Teacher();
+        teacher.setId("1");
+        teacher.setName("Jack");
+        teacher.setAge(18);
+        List<String> strings = jedis.hmget("student", "username","age");
+        for (int i = 0; i < strings.size(); i++) {
+            System.out.println(strings.get(i));
+        }
         //释放资源
         jedis.close();
     }
@@ -92,6 +98,8 @@ public class JedisDemo {
         singleJedisTest();
         //从Jedis连接池中取Jedis对象
         jedisPoolTest();
+        //从redis中取hash类型的数据
+        getTypesOfRedis();
     }
 
 
