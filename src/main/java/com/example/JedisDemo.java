@@ -99,7 +99,7 @@ public class JedisDemo {
         //从Jedis连接池中取Jedis对象
         jedisPoolTest();
         //从redis中取hash类型的数据
-        getTypesOfRedis();
+         getTypesOfRedis();
     }
 
 
