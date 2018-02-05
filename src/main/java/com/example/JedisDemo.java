@@ -66,6 +66,23 @@ public class JedisDemo {
     }
 
     /**
+    　　* @Description: 从redis中取五大类型的数据
+    　　* @author 十一城城主
+    　　* @date 2018/2/5 15:31
+    　　*/
+    public static void getTypesOfRedis(){
+        //设置IP地址以及端口
+        Jedis jedis = new Jedis("39.106.173.68", 6379);
+        //存入数据
+        jedis.set("say","hello redis!");
+        //获取数据
+        String say = jedis.get("say");
+        System.out.println(say);
+        //释放资源
+        jedis.close();
+    }
+
+    /**
     　　* 主方法
     　　* @author 十一城城主
     　　* @date 2018/1/18 17:20
